@@ -64,7 +64,6 @@ public class JdbcStudentDao implements StudentDao {
                     int markId = rs.getInt("mark.id");
                     list.add(new Student(id, first_name, second_name, subject, mark,markId));
                 }
-
                 return list;
             }
         });

@@ -1,13 +1,21 @@
 package com.courses.spring.dao.objects;
 
+
+import javax.validation.constraints.Pattern;
+
 public class Student {
 
     private int id;
+
+    @Pattern(regexp="^[A-Z][a-z]{1,255}$",message = "Name is invalid")
     private String firstName;
+
+    @Pattern(regexp="^[A-Z][a-z]{1,255}$",message = "SecondName is invalid")
     private String secondName;
     private int mark;
     private String subject;
     private int markId;
+
 
 
     public Student() {
@@ -88,4 +96,5 @@ public class Student {
     public void setMarkId(int markId) {
         this.markId = markId;
     }
+
 }

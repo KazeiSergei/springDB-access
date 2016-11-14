@@ -48,10 +48,10 @@ public class JdbcMarkDao implements MarkDao {
     public int insertMark(Mark mark) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("student_id", mark.getMark());
+        params.addValue("student_id", mark.getStudent_id());
         params.addValue("subject_id", mark.getSubject_id());
         params.addValue("mark", mark.getMark());
-        params.addValue("id", mark.getId());
+        //params.addValue("id", mark.getId());
         namedParameterJdbcTemplate.update(SQL_QUERY_INSERT_MARK, params, keyHolder);
         return keyHolder.getKey().intValue();
 
